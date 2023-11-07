@@ -1,0 +1,32 @@
+server:
+  port: 8999
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    dynamic:
+      primary: read
+      #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      strict: false
+      datasource:
+        read:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://192.168.142.201:3306/syncDemo?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: root
+          password: Gan1107743923.
+          initial-size: 1
+          min-idle: 1
+          max-active: 20
+          test-on-borrow: true
+        write:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://192.168.142.200:3306/syncDemo?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          username: root
+          password: Gan1107743923.
+          initial-size: 1
+          min-idle: 1
+          max-active: 20
+          test-on-borrow: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
