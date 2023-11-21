@@ -6,6 +6,7 @@
         <option name="generatedClassPathList">
           <list>
             <option value="D:\Java\monster-sharding\dynamic-data-source\src\main\java\com\monster\dsframework\entity" />
+            <option value="D:\Java\monster-sharding\Sharding\src\main\java\com\monster\sharding\entity" />
           </list>
         </option>
       </ProjectProfile>
