@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author Monster gan
+ */
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class JDBCTest {
@@ -20,7 +23,7 @@ public class JDBCTest {
 
     @Test
     public void addcourse() {
-        for (int i = 0;i < 10;i++){
+        for (int i = 0; i < 10; i++) {
             Course c = new Course();
             c.setCname("java");
             c.setUserId(1001L);
@@ -31,11 +34,25 @@ public class JDBCTest {
         }
     }
 
+    /**
+     * 单个查询
+     */
     @Test
-    public void queryCourse(){
+    public void queryCourse() {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("cid",1724352748638789637L);
+        queryWrapper.eq("cid", 934481244211642369L);
         List<Course> courses = courseMapper.selectList(queryWrapper);
-        System.out.println(courses);
+        courses.forEach(System.out::println);
+    }
+
+    /**
+     * 多个查询
+     */
+    @Test
+    public void queryCourseIn() {
+        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("cid", 934481244278751233L, 934481244182282241L);
+        List<Course> courses = courseMapper.selectList(queryWrapper);
+        courses.forEach(System.out::println);
     }
 }
