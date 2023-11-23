@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 /**
  * @author Monster gan
  */
@@ -42,6 +44,8 @@ public class JDBCTest {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("cid", 934481244211642369L);
         List<Course> courses = courseMapper.selectList(queryWrapper);
+        // 添加断言来验证结果
+        assertNotNull(courses); // 断言结果不为null
         courses.forEach(System.out::println);
     }
 
@@ -53,6 +57,8 @@ public class JDBCTest {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
         queryWrapper.in("cid", 934481244278751233L, 934481244182282241L);
         List<Course> courses = courseMapper.selectList(queryWrapper);
+        // 添加断言来验证结果
+        assertNotNull(courses); // 断言结果不为null
         courses.forEach(System.out::println);
     }
 }
