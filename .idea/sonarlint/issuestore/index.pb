@@ -78,7 +78,9 @@ n
 >Sharding/src/main/java/com/monster/sharding/entity/Course.java,0\9\098da50182c33baffe72aa29bcbfa8a095245cbc
 t
 DSharding/src/main/java/com/monster/sharding/mapper/CourseMapper.java,8\0\80df5ca16e77f288d17b5ceb79a8576a954034c8
-h
-8Sharding/src/test/java/com/monster/sharding/AppTest.java,a\8\a874a20e99943ffb14e4c6a1cdc1b331f8e7d5c4
 i
 9Sharding/src/test/java/com/monster/sharding/JDBCTest.java,d\6\d639c94bc745d9a6d01346ca2c2e0be44a193321
+b
+2Sharding/src/main/resources/application.properties,2\6\2654058a60ea63c5673d92fb471bb6f11b241d71
+E
+Sharding/doc/init.sql,3\2\32941682eaae39fe32d43a69934b44e27c08cb7c
