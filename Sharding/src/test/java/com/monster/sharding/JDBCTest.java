@@ -68,7 +68,22 @@ public class JDBCTest {
     @Test
     public void queryCourseBetween() {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
-        queryWrapper.between("cid", 934481244278751233L, 934481244182282249L);
+        queryWrapper.between("cid", 934481244278751233L, 934481244278751233L);
+        List<Course> courses = courseMapper.selectList(queryWrapper);
+        // 添加断言来验证结果
+        assertNotNull(courses); // 断言结果不为null
+        courses.forEach(System.out::println);
+    }
+
+    /**
+     * 范围和指定查询
+     */
+    @Test
+    public void queryCourseComplexSimple() {
+        QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByDesc("user_id");
+        queryWrapper.in("cid", 934481244278751233L, 934481244278751233L);
+        queryWrapper.eq("user_id", 1001L);
         List<Course> courses = courseMapper.selectList(queryWrapper);
         // 添加断言来验证结果
         assertNotNull(courses); // 断言结果不为null
